@@ -1,9 +1,11 @@
 import React from 'react';
+import { View } from 'react-native';
 import { Header } from 'react-native-elements';
-import { connect } from 'react-redux';
 import { LABELS } from '../../settings/labels';
 import { styles } from './style';
-class Home extends React.Component {
+import ProductList from '../../components/ProductsList/index';
+
+export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
@@ -14,28 +16,25 @@ class Home extends React.Component {
 
     render() {
         return (
-            <Header
-                centerComponent={
-                    { 
-                        text: LABELS.Header.title,
-                        style: {
-                            color: '#fff'
+            <View>
+                <Header
+                    centerComponent={
+                        { 
+                            text: LABELS.Header.title,
+                            style: {
+                                color: '#fff'
+                            }
                         }
                     }
-                }
-                rightComponent={
-                    {
-                        icon: 'home',
-                        color: '#fff' 
+                    rightComponent={
+                        {
+                            icon: 'home',
+                            color: '#fff' 
+                        }
                     }
-                }
-            />
+                />
+                <ProductList />
+            </View>
         )
     }
 }
-const mapStateToProps = state => (
-    {
-        state: state
-    }
-)
-export default connect(mapStateToProps)(Home)
