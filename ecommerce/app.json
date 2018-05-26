@@ -1,4 +1,5 @@
 {
-  "name": "ecommerce",
-  "displayName": "ecommerce"
+  "expo": {
+    "sdkVersion": "27.0.0"
+  }
 }
