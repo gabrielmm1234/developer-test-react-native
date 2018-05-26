@@ -1,7 +1,9 @@
 import React from 'react';
 import { Header } from 'react-native-elements';
-
-export default class Home extends React.Component {
+import { connect } from 'react-redux';
+import { LABELS } from '../../settings/labels';
+import { styles } from './style';
+class Home extends React.Component {
     constructor(props) {
         super(props);
 
@@ -13,10 +15,27 @@ export default class Home extends React.Component {
     render() {
         return (
             <Header
-                leftComponent={{ icon: 'menu', color: '#fff' }}
-                centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-                rightComponent={{ icon: 'home', color: '#fff' }}
+                centerComponent={
+                    { 
+                        text: LABELS.Header.title,
+                        style: {
+                            color: '#fff'
+                        }
+                    }
+                }
+                rightComponent={
+                    {
+                        icon: 'home',
+                        color: '#fff' 
+                    }
+                }
             />
         )
     }
 }
+const mapStateToProps = state => (
+    {
+        state: state
+    }
+)
+export default connect(mapStateToProps)(Home)
