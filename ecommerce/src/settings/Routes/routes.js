@@ -6,9 +6,7 @@ import ProductCard from '../../components/ProductCard/index';
 import { Icon } from 'react-native-vector-icons/FontAwesome';
 
 export const Routes = () => (
-    <Router navigationBarStyle={styles.sceneStyle}
-        icon={<Icon name='shopping-cart' size={30} />}
-    >
+    <Router navigationBarStyle={styles.sceneStyle}>
         <Stack key="root">
             <Scene key="home" component={Home} />
             <Scene key="product" component={ProductCard}/>
