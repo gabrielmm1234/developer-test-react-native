@@ -15,22 +15,27 @@ export default class Home extends React.Component {
         }
     }
 
+    renderHeader() {
+        return (
+            <Header
+                centerComponent={
+                    { 
+                        text: LABELS.Header.title,
+                        style: {
+                            color: '#fff'
+                        }
+                    }
+                }
+                rightComponent={
+                    <Cart />
+                }
+            />
+        )
+    }
     render() {
         return (
             <View>
-                <Header
-                    centerComponent={
-                        { 
-                            text: LABELS.Header.title,
-                            style: {
-                                color: '#fff'
-                            }
-                        }
-                    }
-                    rightComponent={
-                        <Cart />
-                    }
-                />
+                {this.renderHeader()}
                 <ProductList />
             </View>
         )
