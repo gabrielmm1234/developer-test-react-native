@@ -12,12 +12,13 @@ export default class ProductCard extends React.Component {
     }
 
     render() {
+        const { item } = this.props;
         return (
-            <Card title="PS4">
+            <Card title={item.name}>
                 <View>
-                    <Text>{this.props.quantity}: 5</Text>
-                    <Text>{this.props.price}: 5</Text>
-                    <Text>{this.props.description}: Um video game foda</Text>
+                    <Text>{this.props.quantity}: {item.quantity}</Text>
+                    <Text>{this.props.price}: {item.price}</Text>
+                    <Text>{this.props.description}: {item.description}</Text>
                     <Button 
                         title={this.props.labelButton}
                         onPress={() => alert('adicionado ao carrinho')}

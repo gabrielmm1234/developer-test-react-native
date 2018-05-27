@@ -2,7 +2,9 @@ import React from 'react';
 import { Card, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { FlatList } from 'react-native';
-import { styles } from '../Cart/style';
+import { Actions } from 'react-native-router-flux';
+import { styles } from './style';
+
 class ProductList extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +18,7 @@ class ProductList extends React.Component {
 
     render() {
         return (
-            <Card containerStyle={styles.containerStyle}>
+            <Card containerStyle={styles.container}>
                 <FlatList
                     data={this.props.products}
                     extraData={this.state}
@@ -25,6 +27,7 @@ class ProductList extends React.Component {
                         <ListItem
                             key={item.id}
                             title={item.name}
+                            onPress={() => Actions.product({item})}
                         />
                     }
                 />
