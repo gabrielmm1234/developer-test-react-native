@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from '../../settings/consts';
+import { ADD_TO_CART, REMOVE_TO_CART, PURCHASE } from '../../settings/consts';
 const INITIAL_STATE = {
     products: []
 }
@@ -10,6 +10,8 @@ export function cartReducer(state = INITIAL_STATE, action) {
         case REMOVE_TO_CART:
             const products = state.products.filter(product => product !== action.payload)
             return { ...state, products: products }
+        case PURCHASE:
+            return { ...state, products: [] }
         default:
             return state;
     }

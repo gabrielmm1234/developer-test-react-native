@@ -3,7 +3,9 @@ export const LABELS = {
         title: 'Ecommerce'
     },
     Cart: {
-        title: 'Seu carrinho'
+        title: 'Seu carrinho',
+        totalPrice: 'Preço total',
+        purchase: 'Comprar'
     },
     Routes: {
         home: 'home',

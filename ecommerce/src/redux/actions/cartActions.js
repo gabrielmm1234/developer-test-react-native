@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from '../../settings/consts';
+import { ADD_TO_CART, REMOVE_TO_CART, PURCHASE } from '../../settings/consts';
 
 export function addProductToCart(product) {
     return dispatch => {
@@ -14,6 +14,14 @@ export function removeProductToCart(product) {
         dispatch({
             type: REMOVE_TO_CART,
             payload: product
+        })
+    }
+}
+
+export function purchase() {
+    return dispatch => {
+        dispatch({
+            type: PURCHASE
         })
     }
 }
