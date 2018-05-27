@@ -22,6 +22,12 @@ const INITIAL_STATE = [
         name: 'Pizza',
         price: 10,
         quantity: 10
+    },
+    {
+        id: 5,
+        name: 'Coca',
+        price: 10,
+        quantity: 7
     }
 ]
 

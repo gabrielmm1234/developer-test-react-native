@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
-
+import { FlatList } from 'react-native';
+import { styles } from '../Cart/style';
 class ProductList extends React.Component {
     constructor(props) {
         super(props);
@@ -10,21 +11,23 @@ class ProductList extends React.Component {
 
         }
     }
+    
+    keyExtractor = (item, index) => `${item.id}`;
 
     render() {
         return (
-            <Card containerStyle={{padding: 0}} >
-                {
-                    this.props.products.map((product, index) => {
-                        return (
+            <Card containerStyle={styles.containerStyle}>
+                <FlatList
+                    data={this.props.products}
+                    extraData={this.state}
+                    keyExtractor={this.keyExtractor}
+                    renderItem={({item}) => 
                         <ListItem
-                            key={index}
-                            roundAvatar
-                            title={product.name}
+                            key={item.id}
+                            title={item.name}
                         />
-                        );
-                    })
-                }
+                    }
+                />
             </Card>
         )
     }
