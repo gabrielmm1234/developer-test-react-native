@@ -3,7 +3,10 @@ import { Card } from 'react-native-elements';
 import { View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addProductToCart } from '../../redux/actions/cartActions';
+import { addProductToCart, removeProductToCart } from '../../redux/actions/cartActions';
+import { LABELS } from '../../settings/labels';
+import { Actions } from 'react-native-router-flux';
+import { styles } from './style';
 
 class ProductCard extends React.Component {
     constructor(props) {
@@ -22,10 +25,22 @@ class ProductCard extends React.Component {
                     <Text>{this.props.quantity}: {item.quantity}</Text>
                     <Text>{this.props.price}: {item.price}</Text>
                     <Text>{this.props.description}: {item.description}</Text>
-                    <Button 
-                        title={this.props.labelButton}
-                        onPress={() => this.props.addProductToCart(item)}
-                    />
+                    <View style={styles.buttons}>
+                        <Button 
+                            title={this.props.addButton}
+                            onPress={() => this.props.addProductToCart(item)}
+                        />
+                        {
+                            this.props.remove ?
+                                <Button
+                                    color='red'
+                                    title={this.props.removeButton}
+                                    onPress={() => this.props.removeProductToCart(item)}
+                                />
+                            :
+                            null
+                        }
+                    </View>
                 </View>
             </Card>
         )
@@ -33,14 +48,18 @@ class ProductCard extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => (
-    bindActionCreators({ addProductToCart }, dispatch)
+    bindActionCreators({ 
+        addProductToCart,
+        removeProductToCart
+    }, dispatch)
 )
 
 ProductCard.defaultProps = {
     quantity: 'Quantidade',
     price: 'Preço',
     description: 'Descrição',
-    labelButton: 'adicionar ao carrinho'
+    addButton: 'adicionar ao carrinho',
+    removeButton: 'remover do carrinho',
 }
 
 export default connect(null, mapDispatchToProps)(ProductCard);

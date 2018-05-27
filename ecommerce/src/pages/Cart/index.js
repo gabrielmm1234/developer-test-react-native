@@ -3,7 +3,7 @@ import { View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import ProductList from '../../components/ProductList/index';
 
-class Home extends React.Component {
+export default class Cart extends React.Component {
     constructor(props) {
         super(props);
 
@@ -15,15 +15,8 @@ class Home extends React.Component {
     render() {
         return (
             <View>
-                <ProductList products={this.props.products}/>
+                <ProductList products={this.props.cartProducts} remove={true}/>
             </View>
         )
     }
 }
-
-const mapStateToProps = state => (
-    {
-        products: state.products
-    }
-)
-export default connect(mapStateToProps)(Home)

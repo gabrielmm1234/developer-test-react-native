@@ -1,11 +1,10 @@
 import React from 'react';
 import { Card, ListItem } from 'react-native-elements';
-import { connect } from 'react-redux';
 import { FlatList } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { styles } from './style';
 
-class ProductList extends React.Component {
+export default class ProductList extends React.Component {
     constructor(props) {
         super(props);
 
@@ -27,7 +26,7 @@ class ProductList extends React.Component {
                         <ListItem
                             key={item.id}
                             title={item.name}
-                            onPress={() => Actions.product({item})}
+                            onPress={() => Actions.product({item, remove:this.props.remove})}
                         />
                     }
                 />
@@ -35,10 +34,3 @@ class ProductList extends React.Component {
         )
     }
 }
-
-const mapStateToProps = state => (
-    {
-        products: state.products
-    }
-)
-export default connect(mapStateToProps)(ProductList)

@@ -4,6 +4,7 @@ import { styles } from './style';
 import Home from '../../pages/Home/index';
 import ProductCard from '../../components/ProductCard/index';
 import CartIcon from '../../components/CartIcon/index';
+import Cart from '../../pages/Cart/index';
 import { LABELS } from '../labels';
 
 export const Routes = () => (
@@ -15,6 +16,7 @@ export const Routes = () => (
         <Stack key="root" title={LABELS.Header.title}>
             <Scene key="home" component={Home} initial />
             <Scene key="product" component={ProductCard}/>
+            <Scene key="cart" component={Cart} title={LABELS.Cart.title} />
         </Stack>
     </Router>
 )

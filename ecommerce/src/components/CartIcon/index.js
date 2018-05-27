@@ -4,6 +4,7 @@ import { Badge } from 'react-native-elements';
 import { View, TouchableOpacity } from 'react-native';
 import { styles } from './style';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 
 class CartIcon extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class CartIcon extends React.Component {
     render() {
         return (
             <TouchableOpacity
+                onPress={() => Actions.cart({cartProducts: this.props.cart.products}) }
             >
                 <View style={styles.cartContainer}>
                     {
