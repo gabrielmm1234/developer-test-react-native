@@ -28,7 +28,7 @@ export default class ProductCard extends React.Component {
     }
 }
 
-Product.defaultProps = {
+ProductCard.defaultProps = {
     quantity: 'Quantidade',
     price: 'Preço',
     description: 'Descrição',
