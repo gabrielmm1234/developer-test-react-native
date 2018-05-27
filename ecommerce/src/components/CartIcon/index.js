@@ -3,30 +3,23 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Badge } from 'react-native-elements';
 import { View, TouchableOpacity } from 'react-native';
 import { styles } from './style';
-export default class Cart extends React.Component {
+import { connect } from 'react-redux';
+
+class CartIcon extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            counter: 0
-        }
     }
 
-    addCart = () => {
-        this.setState({
-            counter: this.state.counter + 1
-        })
-    }
     render() {
         return (
             <TouchableOpacity
-                onPress={this.addCart}
             >
                 <View style={styles.cartContainer}>
                     {
-                        this.state.counter > 0 ?
+                        this.props.cart.products.length > 0 ?
                             <Badge
-                                value={this.state.counter}
+                                value={this.props.cart.products.length}
                                 textStyle={styles.badgeColor}
                                 containerStyle={styles.badgeBackground}
                             />
@@ -39,3 +32,11 @@ export default class Cart extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => (
+    {
+        cart: state.cart
+    }
+) 
+
+export default connect(mapStateToProps)(CartIcon);

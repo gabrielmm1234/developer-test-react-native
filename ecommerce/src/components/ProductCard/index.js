@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card } from 'react-native-elements';
 import { View, Text, Button } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addProductToCart } from '../../redux/actions/cartActions';
 
-export default class ProductCard extends React.Component {
+class ProductCard extends React.Component {
     constructor(props) {
         super(props);
 
@@ -21,7 +24,7 @@ export default class ProductCard extends React.Component {
                     <Text>{this.props.description}: {item.description}</Text>
                     <Button 
                         title={this.props.labelButton}
-                        onPress={() => alert('adicionado ao carrinho')}
+                        onPress={() => this.props.addProductToCart(item)}
                     />
                 </View>
             </Card>
@@ -29,9 +32,15 @@ export default class ProductCard extends React.Component {
     }
 }
 
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({ addProductToCart }, dispatch)
+)
+
 ProductCard.defaultProps = {
     quantity: 'Quantidade',
     price: 'Preço',
     description: 'Descrição',
     labelButton: 'adicionar ao carrinho'
 }
+
+export default connect(null, mapDispatchToProps)(ProductCard);

@@ -3,13 +3,13 @@ import { Router, Stack, Scene, NavigationBar } from 'react-native-router-flux';
 import { styles } from './style';
 import Home from '../../pages/Home/index';
 import ProductCard from '../../components/ProductCard/index';
-import Cart from '../../components/Cart/index';
+import CartIcon from '../../components/CartIcon/index';
 import { LABELS } from '../labels';
 
 export const Routes = () => (
     <Router
         navigationBarStyle={styles.sceneStyle}
-        renderRightButton={<Cart/>}
+        renderRightButton={<CartIcon />}
         leftButtonIconStyle={{ tintColor: '#fff'}}
     >
         <Stack key="root" title={LABELS.Header.title}>
