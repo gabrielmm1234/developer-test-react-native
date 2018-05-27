@@ -33,7 +33,7 @@ export default class Cart extends React.Component {
                             :
                             null
                     }
-                    <Icon name='shopping-cart' color='white' size={30}/>
+                    <Icon name='shopping-cart' color={styles.icon.color} size={30}/>
                 </View>
             </TouchableOpacity>
         )
