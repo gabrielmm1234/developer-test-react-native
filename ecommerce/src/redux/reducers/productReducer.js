@@ -33,6 +33,69 @@ const INITIAL_STATE = [
         price: 10,
         quantity: 7,
         description: 'Coca-cola é top'
+    },
+    {
+        id: 6,
+        name: 'Campus Party',
+        price: 200,
+        quantity: 7,
+        description: 'Campus Party Brasília 2018'
+    },
+    {
+        id: 7,
+        name: 'Iphone',
+        price: 3000,
+        quantity: 50,
+        description: 'Iphone X preto'
+    },
+    {
+        id: 8,
+        name: 'Notebook Dell',
+        price: 2500,
+        quantity:15,
+        description: 'Notebook Dell preto 15 polegadas'
+    },
+    {
+        id: 9,
+        name: 'Sticker React',
+        price: 10,
+        quantity: 3,
+        description: 'Adesivo para computador do React'
+    },
+    {
+        id: 10,
+        name: 'Hamburguer',
+        price: 20,
+        quantity: 100,
+        description: 'Hamburguer delicioso'
+    },
+    {
+        id: 11,
+        name: 'Ingresso The Conf',
+        price: 400,
+        quantity: 7000,
+        description: 'The Conf 2018'
+    },
+    {
+        id: 12,
+        name: 'Curso Udemy React Native',
+        price: 19.99,
+        quantity: 1000000,
+        description: 'Aprender React Native e Redux'
+    },
+    {
+        id: 13,
+        name: 'Fone de ouvido',
+        price: 50,
+        quantity: 200,
+        description: 'Fone de ouvido beats'
+    },
+    {
+        id: 14,
+        name: 'Mouse sem fio',
+        price: 50,
+        quantity: 100,
+        description: 'Mouse sem fio com pilha recarregável'
     }
 ]
 
