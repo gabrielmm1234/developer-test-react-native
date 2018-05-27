@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-native-elements';
 import { View, Text, Button } from 'react-native';
 
-export default class Product extends React.Component {
+export default class ProductCard extends React.Component {
     constructor(props) {
         super(props);
 

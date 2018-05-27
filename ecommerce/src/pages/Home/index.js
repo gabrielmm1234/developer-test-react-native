@@ -4,7 +4,6 @@ import { Header } from 'react-native-elements';
 import { LABELS } from '../../settings/labels';
 import { styles } from './style';
 import ProductList from '../../components/ProductsList/index';
-import Product from '../../components/Product/index';
 import Cart from '../../components/Cart/index';
 
 export default class Home extends React.Component {
