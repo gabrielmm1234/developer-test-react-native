@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import ProductList from '../../components/ProductList/index';
 import Pricing from '../../components/Pricing/index';
@@ -15,10 +15,10 @@ export default class Cart extends React.Component {
 
     render() {
         return (
-            <View>
+            <ScrollView>
                 <ProductList products={this.props.cartProducts} remove={true}/>
                 <Pricing products={this.props.cartProducts}/>
-            </View>
+            </ScrollView>
         )
     }
 }
