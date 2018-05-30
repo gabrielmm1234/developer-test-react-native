@@ -16,7 +16,7 @@ class Pricing extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     let price = this.props.products.reduce((total, product) => total + product.price, 0);
     this.setState({price: price})
   }
