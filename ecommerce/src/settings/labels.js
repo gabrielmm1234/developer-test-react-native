@@ -6,9 +6,5 @@ export const LABELS = {
         title: 'Seu carrinho',
         totalPrice: 'Preço total',
         purchase: 'Comprar'
-    },
-    Routes: {
-        home: 'home',
-        cart: 'cart'
     }
 }

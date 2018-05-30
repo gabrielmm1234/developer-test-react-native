@@ -55,7 +55,7 @@ const mapDispatchToProps = dispatch => (
 )
 
 ProductCard.defaultProps = {
-    quantity: 'Quantidade',
+    quantity: 'Quantidade em estoque',
     price: 'Preço',
     description: 'Descrição',
     addButton: 'adicionar ao carrinho',
